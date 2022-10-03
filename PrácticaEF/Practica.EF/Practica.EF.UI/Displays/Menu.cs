@@ -337,31 +337,34 @@ namespace Practica.EF.UI.Displays
 
         internal static char GetMenuAnswer()
         {
+            char auxAnswer = 'Y';
             char answer = 'Y';
             do
             {
+                Console.WriteLine("Do you want to keep running the app?\n\t'Y'es - 'N'o");
                 try
                 {
-                    Console.WriteLine("Do you want to keep running the app?\n\t'Y'es - 'N'o");
                     var option = Convert.ToChar(Console.ReadLine());
                     answer = option.ValidateEnteredCharacter();
                     if (answer == 'Y' || answer == 'N')
                     {
-                        Console.Clear();
-                        return answer;
+                        answer = option;
+                        auxAnswer = 'Y';
                     }
                     else
                     {
-                        return 'E';
+                        auxAnswer = 'N';
                         throw new InvalidDataException("ERROR. You´ve entered non-valid data.");
                     }
                 }
                 catch (Exception ex)
                 {
+                    auxAnswer = 'N';
                     Console.WriteLine($"{ex.Message}");
-                    return 'E';
                 }
-            } while (answer != 'Y' || answer != 'N');
+                Menu.PressKeyToContinue();
+            } while (auxAnswer != 'Y');
+            return answer; 
         }
     }
 }
