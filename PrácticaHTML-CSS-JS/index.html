@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index-style.css" type="text/css">
+    <title>Formulario de registro</title>
+    <link rel="icon" href="assets/logo.ico">
+</head>
+<body>
+    <div class="container">
+        <form class="form-horizontal" id="form-horizontal">
+            <fieldset>
+            <legend>Regístrese</legend>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="name">Nombre</label>  
+              <div class="col-md-4">
+                <input id="name" type="text" placeholder="Ingrese aquí su nombre" class="form-control input-md" required="">               
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="surname">Apellido</label>  
+              <div class="col-md-4">
+                <input id="surname" name="surname" type="text" placeholder="Ingrese aquí su apellido" class="form-control input-md" required="">                
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="mail">Email</label>  
+              <div class="col-md-4">
+                <input id="mail" name="mail" type="email" placeholder="Ingrese aquí su email" class="form-control input-md" required="">                
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="age">Edad</label>
+              <div class="col-md-4">
+                <select id="age" name="age" class="form-control">
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                  <option value="60">60</option>
+                  <option value="61">61</option>
+                  <option value="62">62</option>
+                  <option value="63">63</option>
+                  <option value="64">64</option>
+                  <option value="65">65</option>
+                  <option value="66">66</option>
+                  <option value="67">67</option>
+                  <option value="68">68</option>
+                  <option value="69">69</option>
+                  <option value="70">70</option>
+                  <option value="71">71</option>
+                  <option value="72">72</option>
+                  <option value="73">73</option>
+                  <option value="74">74</option>
+                  <option value="75">75</option>
+                  <option value="76">76</option>
+                  <option value="77">77</option>
+                  <option value="78">78</option>
+                  <option value="79">79</option>
+                  <option value="80">80</option>
+                  <option value="81">81</option>
+                  <option value="82">82</option>
+                  <option value="83">83</option>
+                  <option value="84">84</option>
+                  <option value="85">85</option>
+                  <option value="86">86</option>
+                  <option value="87">87</option>
+                  <option value="88">88</option>
+                  <option value="89">89</option>
+                  <option value="90">90</option>
+                  <option value="91">91</option>
+                  <option value="92">92</option>
+                  <option value="93">93</option>
+                  <option value="94">94</option>
+                  <option value="95">95</option>
+                  <option value="96">96</option>
+                  <option value="97">97</option>
+                  <option value="98">98</option>
+                  <option value="99">99</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="gender"></label>
+              <div class="col-md-4">
+                <div class="radio">
+                    <label for="gender-0">
+                    <input type="radio" name="gender" id="gender-0" value="masculino" checked="checked">
+                    Masculino
+                    </label>
+                </div>
+                <div class="radio">
+                    <label for="gender-1">
+                    <input type="radio" name="gender" id="gender-1" value="femenino">
+                     Femenino
+                    </label>
+                </div>
+                <div class="radio">
+                    <label for="gender-2">
+                    <input type="radio" name="gender" id="gender-2" value="otro">
+                     Otro
+                    </label>
+                </div>
+              </div>
+            </div>
+            <legend>Información adicional</legend>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="company">Empresa</label>  
+              <div class="col-md-4">
+                <input id="company" name="company" type="text" placeholder="Nombre de la empresa" class="form-control input-md">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="phone">Teléfono</label>  
+              <div class="col-md-4">
+                <input id="phone" name="phone" type="text" placeholder="Teléfono de contacto" class="form-control input-md">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="send"></label>
+              <div class="col-md-8">
+                <button type="reset" id="reset" name="reset">Limpiar</button>
+                <button type="button" id="send" name="send" onclick="DisplayResume();">Enviar</button>
+              </div>
+            </div>
+            </fieldset>
+        </form>    
+    </div>
+    <footer>
+        <div id="footer-div">
+            <p class="footer-item">Made with <span>❤</span> by Ezequiel</p>
+            <a class="footer-item" href="https://github.com/Ezequielius-code/LabNet2022/tree/tp6" target="_blank">Enlace a GitHub</a>
+          </div>
+    </footer>
+    <script src="js/index-script.js"></script>
+</body>
+</html>

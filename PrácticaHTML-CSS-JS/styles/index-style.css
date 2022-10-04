@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+body{
+    background: linear-gradient(#4A52B6, #9198E5);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    width: 300px;
+    margin:auto;
+    background: rgba(75, 75, 75, 0.25);
+}
+
+legend{
+    font-family: 'Bungee Spice', cursive;
+}
+
+label{
+    font-family: 'Rock Salt', cursive;
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+button{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+#reset{
+    border-radius: 15%;
+    background-color: red;
+    color: #4A52B6;
+}
+
+#send{
+    border-radius: 15%;
+    background-color: aqua;
+    color:#4A52B6;
+}
+
+#footer-div {
+    margin-top: auto;
+    height: 100px;
+    background: linear-gradient(90deg, #203444, #205474);
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+span{
+    color: red;
+}
+
+.footer-item {
+    margin-top: 35px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
