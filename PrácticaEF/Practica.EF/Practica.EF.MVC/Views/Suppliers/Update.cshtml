@@ -1,0 +1,40 @@
+﻿@model Practica.EF.MVC.Models.SuppliersViewModel
+
+@{
+    ViewBag.Title = "Update Suppliers";
+}
+
+<h1>Update supplier</h1>
+
+@using (Html.BeginForm("Update", "Suppliers", FormMethod.Post))
+ {
+    @Html.AntiForgeryToken()
+    @Html.ValidationMessage("error", new { @class = "text-danger" })
+
+    @Html.HiddenFor(s => s.SupplierId)
+
+    <div class="container-fluid col">
+        <label>Company Name:</label>
+        @Html.TextBoxFor(s => s.CompanyName, new { @class = "form-control", @placeholder = "Company name" })
+        @Html.ValidationMessage("Company Name", new { @class = "text-danger" })
+    </div>
+    <div class="container-fluid col">
+        <label>City:</label>
+        @Html.TextBoxFor(s => s.City, new { @class = "form-control", @placeholder = "City" })
+    </div>
+    <div class="container-fluid col">
+        <label>Country:</label>
+        @Html.TextBoxFor(s => s.Country, new { @class = "form-control", @placeholder = "Country" })
+    </div>
+    <div class="container-fluid col">
+        <label>Phone:</label>
+        @Html.TextBoxFor(s => s.Phone, new { @class = "form-control", @placeholder = "Phone" })
+    </div>
+    <div class="container-fluid col">
+        <label>Contact Name:</label>
+        @Html.TextBoxFor(s => s.ContactName, new { @class = "form-control", @placeholder = "Contact name" })
+    </div>
+    <div class="container-fluid col">
+        <input type="submit" class="btn btn-success" value="Save changes" />
+    </div>
+ }

@@ -13,6 +13,12 @@ namespace Practica.EF.Logic
             return _context.Suppliers.ToList();
         }
 
+        public Suppliers GetSupplierById(int id)
+        {
+            var supplier = _context.Suppliers.FirstOrDefault(x => x.SupplierID == id);
+            return supplier;
+        }
+
         public void Add(Suppliers supplier)
         {
             _context.Suppliers.Add(supplier);
@@ -22,6 +28,10 @@ namespace Practica.EF.Logic
         public void Update(Suppliers supplier)
         {
             var supplierToUpdate = _context.Suppliers.Find(supplier.SupplierID);
+            supplierToUpdate.CompanyName = supplier.CompanyName;
+            supplierToUpdate.City = supplier.City;
+            supplierToUpdate.Country = supplier.Country;
+            supplierToUpdate.Phone = supplier.Phone;
             supplierToUpdate.ContactName = supplier.ContactName;
             _context.Entry(supplierToUpdate).Property(u => u.SupplierID).IsModified = false;
             _context.SaveChanges();
