@@ -16,11 +16,12 @@
     <div class="container-fluid col">
         <label>Company Name:</label>
         @Html.TextBoxFor(s => s.CompanyName, new { @class = "form-control", @placeholder = "Company name" })
-        @Html.ValidationMessage("Company Name", new { @class = "text-danger" })
+        @Html.ValidationMessage("CompanyName", new { @class = "text-danger" })
     </div>
     <div class="container-fluid col">
         <label>City:</label>
         @Html.TextBoxFor(s => s.City, new { @class = "form-control", @placeholder = "City" })
+        @Html.ValidationMessage("City", new { @class = "text-danger" })
     </div>
     <div class="container-fluid col">
         <label>Country:</label>

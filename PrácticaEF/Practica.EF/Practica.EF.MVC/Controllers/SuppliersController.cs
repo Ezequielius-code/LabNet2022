@@ -43,6 +43,10 @@ namespace Practica.EF.MVC.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return View(suppliersView);
+                }
                 var supplierEntity = new Suppliers
                 {
                     SupplierID = suppliersView.SupplierId,
@@ -80,10 +84,14 @@ namespace Practica.EF.MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult Update(SuppliersViewModel suppliersView, int id)
+        public ActionResult Update(SuppliersViewModel suppliersView)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return View(suppliersView);
+                }
                 List<Suppliers> suppliersList = suppliersLogic.GetAll();
                 var supplierListed = suppliersList.Where(s => s.SupplierID == suppliersView.SupplierId).FirstOrDefault();
                 Suppliers supplierUpdated = new Suppliers
