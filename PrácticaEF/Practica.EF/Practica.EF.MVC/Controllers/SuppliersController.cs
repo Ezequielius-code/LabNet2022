@@ -14,7 +14,6 @@ namespace Practica.EF.MVC.Controllers
     public class SuppliersController : Controller
     {
         SuppliersLogic suppliersLogic = new SuppliersLogic();
-        SuppliersViewModel suppliersView = new SuppliersViewModel();
 
         // GET: Suppliers
         public ActionResult Index()
