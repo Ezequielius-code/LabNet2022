@@ -1,0 +1,30 @@
+﻿@model List<Practica.EF.WebAPI.Models.SpellViewModel>
+@{
+    ViewBag.Title = "Spells";
+}
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Spell</th>
+                <th scope="col">Used for</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var spell in Model)
+            {
+                <tr>
+                    <td>@spell.hechizo</td>
+                    <td>@spell.uso</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h2>Sorry! We are out of suppliers now.</h2>
+}
+
