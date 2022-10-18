@@ -1,0 +1,125 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center">SUPPLIERS OPERATIONS</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-8">
+            <div class="card">
+                <div class="card-body">
+                    <h5>SUPPLIERS LIST</h5>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Supplier</th>
+                                <th>City</th>
+                                <th>Country</th>
+                                <th>Phone</th>
+                                <th>Contact</th>
+                                <th rowspan="2">Actions</th>
+                            </tr>
+                            <tr *ngFor="let supplier of listSuppliers">
+                                <td hidden>{{ supplier.supplierId }}</td>
+                                <td>{{ supplier.companyName }}</td>
+                                <td>{{ supplier.city }}</td>
+                                <td>{{ supplier.country }}</td>
+                                <td>{{ supplier.phone }}</td>
+                                <td>{{ supplier.contactName }}</td>
+                                <td><i (click)="editSupplier(supplier)" class="fa-solid fa-pen-to-square text-info"></i></td>
+                                <td><i (click)="deleteSupplier(supplier.supplierId)" class="fa-solid fa-trash-can text-danger"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5>{{ action }} SUPPLIER</h5>
+                    <form [formGroup]="form" (ngSubmit)="saveSupplier()">
+                        <div class="input-group input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="fa-sharp fa-solid fa-warehouse"
+                                    [class.green-icon]="this.form.get('companyName')?.valid"
+                                    [class.red-icon]="this.form.get('companyName')?.invalid 
+                                    && this.form.get('companyName')?.touched">
+                                </i>
+                            </span>
+                            <input formControlName="companyName" type="text" class="form-control" placeholder="Company Name">
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="input-group input-group mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-city"
+                                        [class.green-icon]="this.form.get('city')?.valid"
+                                        [class.red-icon]="this.form.get('city')?.invalid 
+                                        && this.form.get('city')?.touched">                                            
+                                        </i>
+                                    </span>
+                                    <input formControlName="city" maxlength="15" type="text" class="form-control" placeholder="City">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group input-group mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-earth-americas"
+                                            [class.green-icon]="this.form.get('country')?.valid"
+                                            [class.red-icon]="this.form.get('country')?.invalid 
+                                            && this.form.get('country')?.touched">
+                                        </i>
+                                    </span>
+                                    <input formControlName="country" maxlength="15" type="text" class="form-control" placeholder="Country">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="input-group input-group mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-phone"
+                                            [class.green-icon]="this.form.get('phone')?.valid"
+                                            [class.red-icon]="this.form.get('phone')?.invalid 
+                                            && this.form.get('phone')?.touched">
+                                        </i>
+                                    </span>
+                                    <input formControlName="phone" type="text" class="form-control" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="input-group input-group mb-3">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-address-book"
+                                            [class.green-icon]="this.form.get('city')?.valid"
+                                            [class.red-icon]="this.form.get('city')?.invalid 
+                                            && this.form.get('city')?.touched">
+                                        </i>
+                                    </span>
+                                    <input formControlName="contactName" type="text" class="form-control" placeholder="Contact Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row buttons">
+                            <div class="col-4">
+                                <button type="button" (click)="form.reset()" class="btn btn-secondary btn-lg">
+                                    <i class="fa-solid fa-eraser"></i>&nbsp;Clear
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button [disabled]="this.form.invalid" type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fa-solid fa-upload"></i>&nbsp;Save
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
